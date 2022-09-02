@@ -8,8 +8,18 @@ const uncheck = 'fa-circle'
 const lineThrough = 'line-through'
 let LIST
 
+let user=localStorage.getItem("usuario")
 let id // para que inicie en 0 cada tarea tendra un id diferente
+if(user==null){
+    user=prompt("ingrese nombre")
+    localStorage.setItem("usuario",JSON.stringify(user))
+}else{
+    user=localStorage.getItem("usuario")
+}
 
+
+const User=document.getElementById("user")
+User.innerText=`Hola, ${user}`
 //creacion de fecha actualizada 
 
 const FECHA = new Date ()
